@@ -12,7 +12,7 @@ b <- 150
 
 stop_words<-T
 
-data <- tm::PlainTextDocument(readr::read_lines(file = "C:/Users/Admin/Desktop/gotss1e3.txt",
+data <- tm::PlainTextDocument(readr::read_lines(file = "C:/Users/Admin/Desktop/gotss1e4.txt",
                                                 progress = interactive()),
                               heading = "KJB", id = basename(tempfile()),
                               language = "en", description = "Report File")
@@ -87,3 +87,7 @@ ggplot(w, aes(reorder(words, freq), y = freq, fill = hilte))+
   scale_fill_manual(values = c("gray", "cornflowerblue"))+
   coord_flip()+
   labs(x = "NAME", y = "FREQUENCY")
+
+#if they have 2 words for name and he is win
+w$hilte <- with(w, ifelse(words == "eddard"|words =="ned", T, F))
+
