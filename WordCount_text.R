@@ -73,6 +73,7 @@ w <- data %>% filter( str_detect(words, "jon" )|
                         str_detect(words, "wilding")|
                         str_detect(words, "khal")|
                         str_detect(words, "tommy")|
+                        str_detect(words, "littlefinger")|
                         str_detect(words, "mikken")
                         )
 
